@@ -26,5 +26,7 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::resource('products', 'ProductController');
 
+    Route::resource('categories', 'CategoryController');
+
 });
 
