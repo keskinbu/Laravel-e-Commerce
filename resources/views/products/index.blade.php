@@ -6,6 +6,7 @@
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">All Products</div>
+                    <a href="/products/create" type="button" class="btn btn-success">Create New Product</a>
 
                     <div class="panel-body">
                         <table class="table table-hover">
