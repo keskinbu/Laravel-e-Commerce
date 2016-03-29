@@ -17,6 +17,10 @@ Route::group(['middleware' => ['web']], function () {
         return view('welcome');
     });
 
+    Route::get('test', function () {
+        return view('test');
+    });
+
     Route::auth();
 
     Route::get('/home', 'HomeController@index');
@@ -25,6 +29,7 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::resource('categories', 'CategoryController');
 
+    Route::post('/upload/product-image', 'UploadController@product_image');
 
 });
 

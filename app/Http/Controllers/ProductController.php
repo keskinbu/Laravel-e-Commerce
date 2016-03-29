@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Product;
+use App\ProductImage;
 use Symfony\Component\Console\Input\Input;
 use Illuminate\Http\Request;
 
@@ -33,7 +34,9 @@ class ProductController extends Controller
     public function show($slug)
     {
         $product = $this->product->where('slug','LIKE',$slug)->actives()->first();
-        return view('products.show', compact('product'));
+        $images = ProductImage::where('product_id','=',$product->id)->actives()->get();
+
+        return view('products.show', compact('product','images'));
     }
 
     public function create()
