@@ -20,7 +20,7 @@ class Category extends Model
             'parent_id' => 'required',
             'image' => '',
             'slug' => 'unique:categories',
-            'is_active' => 'required',
+            'is_active' => '',
         ]
 
     ];

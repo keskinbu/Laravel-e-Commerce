@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c218a894445f2d10032cc080ae959173",
-    "content-hash": "428dfaa7114140495e22cfad0ca67283",
+    "hash": "d7efbe697d222ecd30be39f6b2727d69",
+    "content-hash": "1184cb1944e857b5c4e949d879663baa",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -2942,6 +2942,42 @@
             "description": "Library that helps with managing the version number of Git-hosted PHP projects",
             "homepage": "https://github.com/sebastianbergmann/version",
             "time": "2015-06-21 13:59:46"
+        },
+        {
+            "name": "sukohi/form-autocomplete",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SUKOHI/FormAutocomplete.git",
+                "reference": "8762165a9d56e1525e234b6e4ceea1df63b8dcd0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SUKOHI/FormAutocomplete/zipball/8762165a9d56e1525e234b6e4ceea1df63b8dcd0",
+                "reference": "8762165a9d56e1525e234b6e4ceea1df63b8dcd0",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "~5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Sukohi\\FormAutocomplete\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sukohi",
+                    "email": "capilano.sukohi@gmail.com"
+                }
+            ],
+            "description": "A PHP package mainly developed for Laravel to generate form input tags of Bootstrap that can automatically display errors, labels and alerts.",
+            "time": "2015-08-31 21:57:17"
         },
         {
             "name": "symfony/css-selector",

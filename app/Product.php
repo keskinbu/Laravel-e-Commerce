@@ -28,7 +28,7 @@ class Product extends Model
             'discount' => '',
             'stock' => '',
             'guarantee' => '',
-            'is_active' => 'required',
+            'is_active' => '',
             'main_product' => 'required',
         ]
 

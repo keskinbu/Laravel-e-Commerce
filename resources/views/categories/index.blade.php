@@ -13,10 +13,9 @@
                         <table class="table table-hover">
                             <thead>
                             <tr>
-                                <th>Code</th>
                                 <th>Name</th>
                                 <th>Category</th>
-                                <th>Stock</th>
+                                <th>Image</th>
                                 <th>slug</th>
                                 <th></th>
                             </tr>
@@ -27,7 +26,6 @@
                                 <tr class="clickable-row" onclick="document.location = '/categories/{{$category->slug}}';">
                                     <th scope="row">{{$category->name}}</th>
                                     <td>{{$category->parent_id}}</td>
-                                    <td>{{$category->slug}}</td>
                                     <td>{{$category->image}}</td>
                                     <td>{{$category->slug}}</td>
                                 </tr>

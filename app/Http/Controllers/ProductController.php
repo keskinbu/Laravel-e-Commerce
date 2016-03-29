@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Product;
 use Symfony\Component\Console\Input\Input;
 use Illuminate\Http\Request;
@@ -37,8 +38,9 @@ class ProductController extends Controller
 
     public function create()
     {
-
-        return view('products.create', compact(''));
+        $category = Category::actives()->where('id','!=',1)->orderBy('name')->pluck('name', 'id');
+        $product = $this->product->actives()->orderBy('name')->pluck('name', 'id');
+        return view('products.create', compact('category','product'));
     }
 
     public function store(Request $request)
@@ -56,6 +58,7 @@ class ProductController extends Controller
         }
         $product = New Product($input);
         $product->slug = (str_slug($request->name,'-'));
+        $product->is_active = 1;
         $product->save();
 
         return Redirect::route('products.index')->with('message', 'Product created');

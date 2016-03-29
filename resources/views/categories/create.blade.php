@@ -17,18 +17,13 @@
                         </fieldset>
 
                         <fieldset class="form-group">
-                            {{ Form::label('parent_id', 'Parent Id') }}
-                            {{ Form::number('parent_id', old('parent_id'), array('class' => 'form-control','placeholder'=>'Parent ID')) }}
+                            {{ Form::label('parent_id', 'Category') }}
+                            {{ Form::select('parent_id', $category, '111', array('class' => 'form-control')) }}
                         </fieldset>
 
                         <fieldset class="form-group">
                             {{ Form::label('image', 'Image') }}
                             {{ Form::text('image', old('image'), array('class' => 'form-control','placeholder'=>'Enter image path')) }}
-                        </fieldset>
-
-                        <fieldset class="form-group">
-                            {{ Form::label('İs Active', 'İs Active') }}
-                            {{ Form::number('is_active', old('is_active'), array('class' => 'form-control','placeholder'=>'Enter is_active')) }}
                         </fieldset>
 
                         <fieldset class="form-group">

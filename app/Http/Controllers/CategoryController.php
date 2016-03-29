@@ -30,7 +30,8 @@ class CategoryController extends Controller
 
     public function create()
     {
-        return view('categories.create', compact(''));
+        $category = Category::actives()->orderBy('name')->pluck('name', 'id');
+        return view('categories.create', compact('category'));
     }
 
     public function store(Request $request)
@@ -47,7 +48,12 @@ class CategoryController extends Controller
             return Redirect::back()->withErrors($validator)->withInput();
         }
         $product = New Category($input);
+
+        if($request->parent_id == 1) {
+            $product->parent_id = 0;
+        }
         $product->slug = (str_slug($request->name, '-'));
+        $product->is_active = 1;
         $product->save();
 
         return Redirect::route('categories.index')->with('message', 'Category created');

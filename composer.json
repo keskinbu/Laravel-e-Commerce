@@ -15,7 +15,8 @@
         "symfony/css-selector": "2.8.*|3.0.*",
         "symfony/dom-crawler": "2.8.*|3.0.*",
         "laracasts/generators": "^1.1",
-        "laravelcollective/html": "5.2.*"
+        "laravelcollective/html": "5.2.*",
+        "sukohi/form-autocomplete": "2.*"
     },
     "autoload": {
         "classmap": [
