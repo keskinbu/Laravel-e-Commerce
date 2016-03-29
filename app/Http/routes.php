@@ -29,7 +29,12 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::resource('categories', 'CategoryController');
 
+    Route::resource('customers', 'CustomerController');
+
     Route::post('/upload/product-image', 'UploadController@product_image');
+
+    Route::get('/customer-info/create', 'CustomerController@info_create');
+    Route::post('/customer-info/create', 'CustomerController@info_store');
 
 });
 
