@@ -49,7 +49,7 @@ class CategoryController extends Controller
         }
         $product = New Category($input);
 
-        if($request->parent_id == 1) {
+        if ($request->input('is_main_category') == true) {
             $product->parent_id = 0;
         }
         $product->slug = (str_slug($request->name, '-'));

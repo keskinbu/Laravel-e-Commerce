@@ -72,8 +72,12 @@
                         </fieldset>
 
                         <fieldset class="form-group">
+                            <input name="is_main_product" type="checkbox"> This product is a main product
+                        </fieldset>
+
+                        <fieldset class="form-group">
                             {{ Form::label('Main Product', 'Main Product') }}
-                            {{ Form::select('main_product', $product, null, ['class' => 'form-control']) }}
+                            {{ Form::select('main_product', $product, array('class' => 'form-control')) }}
                         </fieldset>
 
                         <fieldset class="form-group">
@@ -87,5 +91,4 @@
             </div>
         </div>
     </div>
-
 @endsection

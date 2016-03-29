@@ -17,8 +17,12 @@
                         </fieldset>
 
                         <fieldset class="form-group">
+                            <input name="is_main_category" type="checkbox"> This category is a main category
+                        </fieldset>
+
+                        <fieldset class="form-group">
                             {{ Form::label('parent_id', 'Category') }}
-                            {{ Form::select('parent_id', $category, '111', array('class' => 'form-control')) }}
+                            {{ Form::select('parent_id', $category, array('class' => 'form-control')) }}
                         </fieldset>
 
                         <fieldset class="form-group">

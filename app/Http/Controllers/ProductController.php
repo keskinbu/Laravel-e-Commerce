@@ -59,6 +59,9 @@ class ProductController extends Controller
         $product = New Product($input);
         $product->slug = (str_slug($request->name,'-'));
         $product->is_active = 1;
+        if ($request->input('is_main_product') == true) {
+            $product->main_product = 0;
+        }
         $product->save();
 
         return Redirect::route('products.index')->with('message', 'Product created');
