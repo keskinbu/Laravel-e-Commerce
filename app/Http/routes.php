@@ -12,9 +12,12 @@
 */
 
 Route::group(['middleware' => ['web']], function () {
-
-    Route::get('/', function () {
-        return view('welcome');
+    View::composer('*', function($view)
+    {
+        $main_categories = \App\Category::where('parent_id','=',0)->orderBy('name')->get();
+        $sub_categories = \App\Category::where('parent_id','!=',0)->orderBy('name')->get();
+        $view->with('main_categories', $main_categories);
+        $view->with('sub_categories',$sub_categories);
     });
 
     Route::get('test', function () {
@@ -23,7 +26,7 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::auth();
 
-    Route::get('/home', 'HomeController@index');
+    Route::get('/', 'PagesController@index');
 
     Route::resource('products', 'ProductController');
 

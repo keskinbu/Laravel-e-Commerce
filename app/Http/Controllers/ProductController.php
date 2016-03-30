@@ -41,7 +41,7 @@ class ProductController extends Controller
 
     public function create()
     {
-        $category = Category::actives()->where('id','!=',1)->orderBy('name')->pluck('name', 'id');
+        $category = Category::actives()->orderBy('name')->pluck('name', 'id');
         $product = $this->product->actives()->orderBy('name')->pluck('name', 'id');
         return view('products.create', compact('category','product'));
     }

@@ -17,7 +17,7 @@ class Category extends Model
     public static $rules = [
         'create'=>[
             'name' => 'max:70|required|unique:categories',
-            'parent_id' => 'required',
+            'parent_id' => '',
             'image' => '',
             'slug' => 'unique:categories',
             'is_active' => '',

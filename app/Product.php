@@ -29,7 +29,7 @@ class Product extends Model
             'stock' => '',
             'guarantee' => '',
             'is_active' => '',
-            'main_product' => 'required',
+            'main_product' => '',
         ]
 
     ];
