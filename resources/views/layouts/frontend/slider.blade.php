@@ -1,3 +1,4 @@
+@if (Request::is('/'))
 <section id="slider"><!--slider-->
     <div class="container">
         <div class="row">
@@ -62,3 +63,4 @@
         </div>
     </div>
 </section><!--/slider-->
+@endif

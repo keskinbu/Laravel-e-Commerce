@@ -36,7 +36,10 @@ class ProductController extends Controller
         $product = $this->product->where('slug','LIKE',$slug)->actives()->first();
         $images = ProductImage::where('product_id','=',$product->id)->actives()->get();
 
-        return view('products.show', compact('product','images'));
+
+        $product->stock>0 ? $availability = 'In Stock' : $availability = 'Out Of Stock';
+
+        return view('products.show', compact('product','images','availability'));
     }
 
     public function create()
